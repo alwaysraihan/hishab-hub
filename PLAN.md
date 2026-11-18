@@ -14,7 +14,7 @@ If interrupted: read this file first and continue from the first unchecked item.
 - [x] 8. Loan EMI
 - [x] 9. DPS / FDR
 - [x] 10. Zakat
-- [ ] 11. Income tax (config placeholders only)
+- [x] 11. Income tax (config placeholders only)
 - [ ] 12. Faraid (flagged off by default)
 - [ ] 13. Static pages (about, privacy, disclaimer, 404)
 - [ ] 14. SEO (meta, JSON-LD, sitemap, robots, OG image)
@@ -43,3 +43,8 @@ If interrupted: read this file first and continue from the first unchecked item.
       the right default for the target audience.
 - [ ] Add verified regional presets (district-wise কাঠা/বিঘা sizes) from official land-office/survey sources.
       Currently only "default" and "custom" exist; no regional values were invented.
+
+### Income Tax config — `src/data/tax-config.ts`
+- [ ] Fill `taxYear`, `taxFreeLimitByCategory`, `slabs`, `minimumTax`, `investmentRebateRules`, `sourceUrl`, and
+      `lastUpdated` from the official NBR Income Tax Paripatra / Finance Act. Until filled, `/income-tax-calculator/`
+      shows the banner `"কর হার হালনাগাদ করা হচ্ছে"` and disables calculation.
