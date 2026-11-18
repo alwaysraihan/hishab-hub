@@ -89,13 +89,14 @@ export function SearchBox({ variant = "compact", className, onNavigate }: Search
         <input
           id={inputId}
           type="search"
+          data-no-ring=""
           role="combobox"
           aria-expanded={showList}
           aria-controls={listId}
           aria-autocomplete="list"
           aria-activedescendant={showList && results[active] ? `${listId}-${results[active].slug}` : undefined}
           autoComplete="off"
-          placeholder={hero ? "কী হিসাব করবেন? যেমন: কাঠা, কিস্তি, যাকাত…" : "খুঁজুন… (যেমন: বিঘা, EMI)"}
+          placeholder={hero ? "কী হিসাব করবেন? (জমি, লোন, যাকাত…)" : "খুঁজুন… (যেমন: বিঘা, EMI)"}
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);

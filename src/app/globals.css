@@ -102,11 +102,17 @@ h4 {
   color: var(--text);
 }
 
-/* Visible keyboard focus ring for every interactive element */
-:focus-visible {
+/* Visible keyboard focus ring for every interactive element (except wrapped inputs that use focus-within) */
+:focus-visible:not([data-no-ring]) {
   outline: 3px solid var(--ring);
   outline-offset: 2px;
   border-radius: 8px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 ::selection {

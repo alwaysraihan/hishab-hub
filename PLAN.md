@@ -11,7 +11,7 @@ If interrupted: read this file first and continue from the first unchecked item.
 - [x] 5. Home page + search
 - [x] 6. CalculatorLayout template
 - [x] 7. Jomi converter
-- [ ] 8. Loan EMI
+- [x] 8. Loan EMI
 - [ ] 9. DPS / FDR
 - [ ] 10. Zakat
 - [ ] 11. Income tax (config placeholders only)

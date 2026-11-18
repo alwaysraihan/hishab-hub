@@ -102,11 +102,12 @@ export function JomiConverter() {
               value={`${fmt(unit === "sqft" ? results.shotok : results.sqft)} ${unit === "sqft" ? "শতক" : "বর্গফুট"}`}
             />
             <ul className="grid grid-cols-1 gap-2 min-[400px]:grid-cols-2">
-              {LAND_UNITS.map((u) => (
+              {LAND_UNITS.map((u, idx) => (
                 <li
                   key={u}
                   className={cn(
                     "flex flex-col rounded-xl border px-4 py-2.5",
+                    idx === LAND_UNITS.length - 1 && LAND_UNITS.length % 2 === 1 && "min-[400px]:col-span-2",
                     u === unit ? "border-primary/40 bg-primary-soft" : "border-border bg-surface-2",
                   )}
                 >

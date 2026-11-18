@@ -57,6 +57,7 @@ export function Input({
         <input
           id={inputId}
           type="text"
+          data-no-ring=""
           inputMode={inputMode}
           autoComplete="off"
           value={value}
