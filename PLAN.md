@@ -9,7 +9,7 @@ If interrupted: read this file first and continue from the first unchecked item.
 - [x] 3. Digits, format utilities + tests
 - [x] 4. Layout: header, footer, dark mode, digit toggle, tool registry
 - [x] 5. Home page + search
-- [ ] 6. CalculatorLayout template
+- [x] 6. CalculatorLayout template
 - [ ] 7. Jomi converter
 - [ ] 8. Loan EMI
 - [ ] 9. DPS / FDR
