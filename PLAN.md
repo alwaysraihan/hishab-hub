@@ -18,7 +18,7 @@ If interrupted: read this file first and continue from the first unchecked item.
 - [x] 12. Faraid (flagged off by default)
 - [x] 13. Static pages (about, privacy, disclaimer, 404)
 - [x] 14. SEO (meta, JSON-LD, sitemap, robots, OG image)
-- [ ] 15. Quality pass (mobile, a11y, contrast, performance, validation)
+- [x] 15. Quality pass (mobile, a11y, contrast, performance, validation)
 - [ ] 16. Cloudflare config + DEPLOY.md, delete /design page, final build, push
 
 ## Assumptions

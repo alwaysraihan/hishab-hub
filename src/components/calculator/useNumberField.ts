@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePreferences } from "@/components/providers/PreferencesProvider";
+import { applyDigitMode } from "@/lib/digits";
 import { validateNumber, type NumberRule } from "@/lib/validate";
 
 export interface NumberField {
@@ -17,9 +19,15 @@ export interface NumberField {
   inputProps: { value: string; onValueChange: (v: string) => void; error: string | null };
 }
 
-/** State + validation for one numeric input field. */
+/** State + validation for one numeric input field. Syncs display digits when the header digit toggle changes. */
 export function useNumberField(initial: string, rule: NumberRule): NumberField {
+  const { digits } = usePreferences();
   const [raw, setRaw] = useState(initial);
+
+  useEffect(() => {
+    setRaw((prev) => applyDigitMode(prev, digits));
+  }, [digits]);
+
   const result = validateNumber(raw, rule);
   const value = result.ok ? result.value : null;
   const error = result.ok ? null : result.error;
@@ -28,7 +36,7 @@ export function useNumberField(initial: string, rule: NumberRule): NumberField {
     setRaw,
     value,
     error,
-    reset: () => setRaw(initial),
+    reset: () => setRaw(applyDigitMode(initial, digits)),
     inputProps: { value: raw, onValueChange: setRaw, error },
   };
 }
