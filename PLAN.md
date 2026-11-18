@@ -13,7 +13,7 @@ If interrupted: read this file first and continue from the first unchecked item.
 - [x] 7. Jomi converter
 - [x] 8. Loan EMI
 - [x] 9. DPS / FDR
-- [ ] 10. Zakat
+- [x] 10. Zakat
 - [ ] 11. Income tax (config placeholders only)
 - [ ] 12. Faraid (flagged off by default)
 - [ ] 13. Static pages (about, privacy, disclaimer, 404)
