@@ -10,7 +10,7 @@ If interrupted: read this file first and continue from the first unchecked item.
 - [x] 4. Layout: header, footer, dark mode, digit toggle, tool registry
 - [x] 5. Home page + search
 - [x] 6. CalculatorLayout template
-- [ ] 7. Jomi converter
+- [x] 7. Jomi converter
 - [ ] 8. Loan EMI
 - [ ] 9. DPS / FDR
 - [ ] 10. Zakat
@@ -38,4 +38,8 @@ If interrupted: read this file first and continue from the first unchecked item.
 
 ## Needs human verification
 
-(filled during phases 7, 11, 12)
+### Land (জমি) presets — `src/data/land-presets.ts`, `src/lib/land.ts`
+- [ ] Default কাঠা/বিঘা preset (1 কাঠা = 720 বর্গফুট, 1 বিঘা = 20 কাঠা) — taken from the brief; confirm it is
+      the right default for the target audience.
+- [ ] Add verified regional presets (district-wise কাঠা/বিঘা sizes) from official land-office/survey sources.
+      Currently only "default" and "custom" exist; no regional values were invented.
