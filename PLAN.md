@@ -7,7 +7,7 @@ If interrupted: read this file first and continue from the first unchecked item.
 - [x] 1. Project setup, config, Vitest, PLAN.md
 - [x] 2. Design system tokens + ui components + /design page
 - [x] 3. Digits, format utilities + tests
-- [ ] 4. Layout: header, footer, dark mode, digit toggle, tool registry
+- [x] 4. Layout: header, footer, dark mode, digit toggle, tool registry
 - [ ] 5. Home page + search
 - [ ] 6. CalculatorLayout template
 - [ ] 7. Jomi converter
