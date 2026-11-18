@@ -1,0 +1,28 @@
+{
+  "name": "হিসাব হাব (Hishab Hub)",
+  "short_name": "হিসাব হাব",
+  "description": "বাংলাদেশের জন্য ফ্রি বাংলা ক্যালকুলেটর — জমি, লোন ইএমআই, ডিপিএস-এফডিআর, যাকাত ও আয়কর",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAF9",
+  "theme_color": "#0F6B4F",
+  "lang": "bn-BD",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

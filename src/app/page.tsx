@@ -1,9 +1,18 @@
 import { Gift, Languages, Zap, UserX } from "lucide-react";
 import { ENABLED_TOOLS } from "@/data/tools";
 import { HOME_FAQ, toAccordion } from "@/data/home";
+import { SITE_DESCRIPTION, SITE_NAME } from "@/config/site";
+import { faqJsonLd, pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { SearchBox } from "@/components/SearchBox";
 import { ToolCard } from "@/components/ToolCard";
 import { Accordion } from "@/components/ui/Accordion";
+
+export const metadata = pageMetadata({
+  title: `${SITE_NAME} — বাংলায় ফ্রি ক্যালকুলেটর (জমি, লোন ইএমআই, ডিপিএস, যাকাত, আয়কর)`,
+  description: SITE_DESCRIPTION,
+  path: "/",
+  absoluteTitle: true,
+});
 
 const WHY = [
   { icon: Gift, title: "সম্পূর্ণ ফ্রি", text: "সব ক্যালকুলেটর বিনামূল্যে, কোনো লুকানো চার্জ নেই।" },
@@ -13,8 +22,12 @@ const WHY = [
 ] as const;
 
 export default function HomePage() {
+  const jsonLd = [websiteJsonLd(), faqJsonLd(HOME_FAQ)];
   return (
     <main>
+      {jsonLd.map((data, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+      ))}
       {/* Hero */}
       <section className="border-b border-border bg-gradient-to-b from-primary-soft/70 to-bg">
         <div className="mx-auto max-w-content px-4 pb-14 pt-12 text-center sm:pt-20">

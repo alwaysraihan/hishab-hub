@@ -17,7 +17,7 @@ If interrupted: read this file first and continue from the first unchecked item.
 - [x] 11. Income tax (config placeholders only)
 - [x] 12. Faraid (flagged off by default)
 - [x] 13. Static pages (about, privacy, disclaimer, 404)
-- [ ] 14. SEO (meta, JSON-LD, sitemap, robots, OG image)
+- [x] 14. SEO (meta, JSON-LD, sitemap, robots, OG image)
 - [ ] 15. Quality pass (mobile, a11y, contrast, performance, validation)
 - [ ] 16. Cloudflare config + DEPLOY.md, delete /design page, final build, push
 
