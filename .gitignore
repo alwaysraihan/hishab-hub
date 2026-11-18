@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# next.js / build
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# env (never commit)
+.env
+.env*
+!.env.example
+
+# cloudflare
+.wrangler/
+
+# misc
+.DS_Store
+npm-debug.log*
+coverage/

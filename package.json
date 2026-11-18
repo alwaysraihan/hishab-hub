@@ -1,0 +1,32 @@
+{
+  "name": "hishab-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "হিসাব হাব — বাংলাদেশের জন্য ফ্রি বাংলা ক্যালকুলেটর ওয়েবসাইট",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve out",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "lucide-react": "^1.75.0",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "postcss": "^8.5.33",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.1",
+    "wrangler": "^4.164.0"
+  }
+}
