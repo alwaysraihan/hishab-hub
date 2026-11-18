@@ -15,7 +15,7 @@ If interrupted: read this file first and continue from the first unchecked item.
 - [x] 9. DPS / FDR
 - [x] 10. Zakat
 - [x] 11. Income tax (config placeholders only)
-- [ ] 12. Faraid (flagged off by default)
+- [x] 12. Faraid (flagged off by default)
 - [ ] 13. Static pages (about, privacy, disclaimer, 404)
 - [ ] 14. SEO (meta, JSON-LD, sitemap, robots, OG image)
 - [ ] 15. Quality pass (mobile, a11y, contrast, performance, validation)
@@ -48,3 +48,27 @@ If interrupted: read this file first and continue from the first unchecked item.
 - [ ] Fill `taxYear`, `taxFreeLimitByCategory`, `slabs`, `minimumTax`, `investmentRebateRules`, `sourceUrl`, and
       `lastUpdated` from the official NBR Income Tax Paripatra / Finance Act. Until filled, `/income-tax-calculator/`
       shows the banner `"কর হার হালনাগাদ করা হচ্ছে"` and disables calculation.
+
+### Faraid (ফারায়েজ) rules & test cases — `src/lib/faraid.ts`, `src/lib/faraid.test.ts`
+`enabled: false` is set in `src/data/tools.ts` so Faraid is hidden from navigation, home cards, search, and sitemap
+until an Islamic scholar verifies the following implemented rules and test cases:
+- [ ] Supported heirs only: husband or wives (1..4), sons, daughters, father, mother. Any other heir combination,
+      or any case requiring Awl, Radd, or Umariyyatayn (spouse + both parents + no children), returns
+      `"এই ক্ষেত্রে আলেম বা আইনজীবীর পরামর্শ নিন"` without calculating.
+- [ ] Fixed shares implemented:
+      - Husband: 1/2 (no children) or 1/4 (with children)
+      - Wives (shared equally among 1..4): 1/4 (no children) or 1/8 (with children)
+      - Mother: 1/3 (no children) or 1/6 (with children)
+      - Father: 1/6 fixed when children exist; plus residue when no sons exist
+      - Daughters (when no sons): 1/2 for 1 daughter; 2/3 shared equally for 2+ daughters
+- [ ] Residuary (Asaba) rules implemented:
+      - When sons >= 1: sons and daughters share residue in 2:1 male-to-female ratio
+      - When sons == 0 and father is alive: father takes residue (in addition to 1/6 fixed if daughters exist)
+- [ ] Test cases in `src/lib/faraid.test.ts` to review:
+      1. Wife (1), 1 Son, 1 Daughter -> Wife 1/8, Son 7/12, Daughter 7/24
+      2. Husband, Father, Mother, 1 Son -> Husband 1/4, Father 1/6, Mother 1/6, Son 5/12
+      3. 1 Daughter, Father -> Daughter 1/2, Father 1/2 (1/6 fixed + 1/3 residue)
+      4. Father, Mother (no spouse, no children) -> Mother 1/3, Father 2/3
+      5. Husband + 2 Daughters + Mother (sum 13/12 -> Awl) -> shows consult message
+      6. 1 Daughter + Mother only (sum 2/3, no asaba -> Radd) -> shows consult message
+      7. Husband + Father + Mother, no children (Umariyyatayn) -> shows consult message
