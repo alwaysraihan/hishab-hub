@@ -1,11 +1,11 @@
-# Hishab Hub (হিসাব হাব) — Build Plan
+﻿# Hishab Hub (à¦¹à¦¿à¦¸à¦¾à¦¬ à¦¹à¦¾à¦¬) â€” Build Plan
 
 If interrupted: read this file first and continue from the first unchecked item.
 
 ## Phases
 
 - [x] 1. Project setup, config, Vitest, PLAN.md
-- [ ] 2. Design system tokens + ui components + /design page
+- [x] 2. Design system tokens + ui components + /design page
 - [ ] 3. Digits, format utilities + tests
 - [ ] 4. Layout: header, footer, dark mode, digit toggle, tool registry
 - [ ] 5. Home page + search
@@ -29,11 +29,11 @@ If interrupted: read this file first and continue from the first unchecked item.
 - Tailwind CSS v4 (CSS-first config) is used; dark mode uses the class strategy via `@custom-variant dark`.
 - Site URL defaults to `https://hishab-hub.workers.dev` in `src/config/site.ts` and can be overridden with
   `NEXT_PUBLIC_SITE_URL` at build time.
-- "এলাকা" default preset for land: 1 কাঠা = 720 বর্গফুট, 1 বিঘা = 20 কাঠা (as given in the brief).
-- Zakat: 1 ভরি is treated as one unit; user enters price per ভরি, so no gram conversion is needed.
+- "à¦à¦²à¦¾à¦•à¦¾" default preset for land: 1 à¦•à¦¾à¦ à¦¾ = 720 à¦¬à¦°à§à¦—à¦«à§à¦Ÿ, 1 à¦¬à¦¿à¦˜à¦¾ = 20 à¦•à¦¾à¦ à¦¾ (as given in the brief).
+- Zakat: 1 à¦­à¦°à¦¿ is treated as one unit; user enters price per à¦­à¦°à¦¿, so no gram conversion is needed.
 - DPS: deposits are made at the start of each month; interest is credited at each compounding period on the
   balance (monthly deposits earn simple interest within a period until credited). This is an estimate.
-- Gold/silver nisab thresholds (7.5 / 52.5 ভরি) are taken from the brief, not from memory.
+- Gold/silver nisab thresholds (7.5 / 52.5 à¦­à¦°à¦¿) are taken from the brief, not from memory.
 - Static export cannot generate dynamic OG images at runtime, so a static SVG + PNG OG image is placed in /public.
 
 ## Needs human verification
